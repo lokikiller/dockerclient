@@ -399,9 +399,9 @@ func (client *DockerClient) getStats(id string, cb StatCallback, ec chan error, 
 	defer resp.Body.Close()
 
 	dec := json.NewDecoder(resp.Body)
-	tc := time.Tick(defaultStasTime)
+//	tc := time.Tick(defaultStasTime)
 	for atomic.LoadInt32(&client.monitorStats) > 0 {
-		<-tc
+//		<-tc
 		var stats *Stats
 		if err := dec.Decode(&stats); err != nil {
 			ec <- err

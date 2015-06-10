@@ -43,5 +43,5 @@ type Client interface {
 	RenameContainer(oldName string, newName string) error
 	ImportImage(source string, repository string, tag string, tar io.Reader) (io.ReadCloser, error)
 	ChangeDefaultTime(timeOut, statsTime time.Duration)
-	TOPContainer(id string)(*TopConfig, error)
+	TOPContainer(id string)([]*TopRes, error)
 }
